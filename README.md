@@ -23,3 +23,8 @@ npm run build
 ```
 
 Look at the route table. `○ (Static)` is prerendered once; `ƒ (Dynamic)` is server-rendered on each request.
+
+## Explicit control examples
+
+- `/about` uses `export const dynamic = "force-static"` to force static rendering.
+- `/recipe/[id]` uses `generateStaticParams()` to prebuild `/recipe/1`, `/2`, `/3` at build time (shown as `● (SSG)` in the route table).
